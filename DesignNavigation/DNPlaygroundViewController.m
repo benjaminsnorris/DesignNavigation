@@ -44,6 +44,16 @@
     titleLabel.font = [UIFont fontWithName:@"Avenir Next Condensed" size:20];
     self.navigationItem.titleView = titleLabel;
     
+    // TOOLBAR
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 40, self.view.bounds.size.width, 40)];
+    toolbar.barTintColor = [UIColor darkGrayColor];
+    toolbar.tintColor = [UIColor lightGrayColor];
+    [self.view addSubview:toolbar];
+    
+    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:nil];
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:nil];
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [toolbar setItems:@[flexibleSpace, cameraButton, anotherButton]];
 }
 
 - (void)didReceiveMemoryWarning
